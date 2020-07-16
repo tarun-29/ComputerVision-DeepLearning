@@ -12,11 +12,17 @@ writer = cv2.VideoWriter('mysupervideo.mp4', cv2.VideoWriter_fourcc(*"XVID"), 20
 
 while True :
     ret, frame = cap.read()
+
+    #operations like drawing 
+    write.writer(frame)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+
     cv2.imshow('frame',gray)
 
     if cv2.waitKey(1) & 0xFF == ord('q') :
         break
 
 cap.release()
+wirter.release()
 cv2.destroyAllWindows()
